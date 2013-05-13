@@ -1,0 +1,31 @@
+<h1>New Portfolio</h1>
+
+
+<%= form_tag(portfolios_url, method: 'post') do %>
+
+
+  <div>
+    <%= label_tag :picture1 %><br />
+    <%= text_field_tag :picture1 %>
+  </div>
+
+  <div>
+    <%= label_tag :picture2 %><br />
+    <%= text_field_tag :picture2 %>
+  </div>
+
+  <div>
+    <%= label_tag :caption %><br />
+    <%= text_field_tag :caption %>
+  </div>
+
+  <div>
+    <%= label_tag :favorite %><br />
+    <%= check_box_tag :favorite? %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Create Portfolio" %>
+  </div>
+<% end %>

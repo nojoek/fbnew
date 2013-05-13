@@ -1,0 +1,34 @@
+<h1>Portfolios</h1>
+
+<p><%= link_to 'Add a New Portfolio', new_portfolio_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Picture1</th>
+      <th>Picture2</th>
+      <th>Caption</th>
+      <th>Favorite</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @portfolios.each do |portfolio| %>
+    <tr>
+      <td><%= portfolio.picture1 %></td>
+      <td><%= portfolio.picture2 %></td>
+      <td><%= portfolio.caption %></td>
+      <td><%= portfolio.favorite %></td>
+  
+      <td><%= link_to 'Show', portfolio_url(portfolio) %></td>
+      <td><%= link_to 'Edit', edit_portfolio_url(portfolio) %></td>
+      <td><%= link_to 'Destroy', portfolio_url(portfolio), method: 'delete', data: { confirm: "Do you really want to delete this portfolio?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

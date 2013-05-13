@@ -1,0 +1,31 @@
+<h1>Editing Portfolio #<%= @portfolio.id %></h1>
+
+
+<%= form_tag(portfolio_url(@portfolio), method: 'put') do %>
+
+  <div>
+    <%= label_tag :picture1 %><br />
+    <%= text_field_tag :picture1, @portfolio.picture1 %>
+  </div>
+
+  <div>
+    <%= label_tag :picture2 %><br />
+    <%= text_field_tag :picture2, @portfolio.picture2 %>
+  </div>
+
+  <div>
+    <%= label_tag :caption %><br />
+    <%= text_field_tag :caption, @portfolio.caption %>
+  </div>
+
+  <div>
+    <%= label_tag :favorite %><br />
+    <%= check_box_tag :favorite, @portfolio.favorite? %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Portfolio" %>
+  </div>
+
+<% end %>
